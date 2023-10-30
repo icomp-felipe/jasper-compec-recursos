@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Resposta" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="33af20aa-2105-451b-b814-5e4c25dbf612">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Títulos" hTextAlign="Center" fontName="DejaVu" fontSize="12" isBold="true"/>
+	<style name="Texto Dinâmico" fontName="DejaVu" fontSize="10"/>
+	<parameter name="PAR_LOGO" class="java.awt.image.BufferedImage"/>
+	<parameter name="PAR_CABECALHO" class="java.lang.String"/>
+	<parameter name="PAR_DATA" class="java.time.LocalDate"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="inscricao" class="java.lang.Integer"/>
+	<field name="nomeCandidato" class="java.lang.String"/>
+	<field name="CPFCandidato" class="java.lang.String"/>
+	<field name="dataRecurso" class="java.time.LocalDateTime"/>
+	<field name="objeto" class="java.lang.String"/>
+	<field name="disciplina" class="java.lang.String"/>
+	<field name="questao" class="java.lang.Integer"/>
+	<field name="questionamento" class="java.lang.String"/>
+	<field name="anexoCandidato" class="java.lang.String"/>
+	<field name="recurso" class="java.lang.String"/>
+	<field name="parecerBanca" class="java.lang.String"/>
+	<field name="decisaoBanca" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<image>
+				<reportElement x="0" y="0" width="555" height="60" uuid="366fb6e8-d08f-4865-b807-e3477594b122">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{PAR_LOGO}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Títulos" x="0" y="65" width="555" height="15" uuid="29ebfa2b-554d-41fc-8eec-f6b7e6c27138">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<text><![CDATA[Resposta a Recurso contra Questão de Prova]]></text>
+			</staticText>
+			<textField textAdjust="ScaleFont">
+				<reportElement style="Títulos" x="0" y="80" width="555" height="15" uuid="98049834-01d2-49b9-a329-7b59f173a085">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{PAR_CABECALHO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="314" splitType="Stretch">
+			<staticText>
+				<reportElement style="Títulos" x="0" y="0" width="100" height="15" uuid="9033df97-24f7-43f0-bc16-5b47f3748abd">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Candidato(a):]]></text>
+			</staticText>
+			<textField textAdjust="ScaleFont">
+				<reportElement style="Texto Dinâmico" x="110" y="0" width="430" height="15" uuid="297a2b1f-5d0f-45e8-b410-e32316d45867">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[String.format("%d. %s [%s]", $F{inscricao}, $F{nomeCandidato}, $F{CPFCandidato})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Títulos" x="0" y="20" width="100" height="15" uuid="c4bb7ab1-7eba-40ff-880f-472ef629bd48">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Recurso em:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="20" width="100" height="15" uuid="ed39172f-0ac3-4d63-98e0-10f7072552d4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{dataRecurso}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="39" width="555" height="1" uuid="3aaad4ab-5b74-4224-a7b7-0cbca34f0454">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement style="Títulos" x="0" y="45" width="65" height="15" uuid="a236199e-bc5d-47d6-b561-4e41cfeeee45">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Tópico:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Títulos" x="0" y="65" width="65" height="15" uuid="8e83ece3-bf63-48a5-ac06-bdfced895879">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Questão:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Texto Dinâmico" x="70" y="45" width="485" height="15" uuid="3d5bdd31-9e7e-4cb8-aa15-91face6006fb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{objeto} == null ? $F{disciplina} : $F{objeto} + " [" + $F{disciplina} + "]"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Texto Dinâmico" x="70" y="65" width="485" height="15" uuid="3137de8d-9da1-407b-9117-92b7be20670b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{questao}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="85" width="555" height="1" uuid="1ba5f8fb-fc9b-4d1f-9077-607219991148">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement style="Títulos" x="0" y="90" width="210" height="15" uuid="154fd0fd-6b83-4dc5-ac05-d14c2f8410f8">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Questionamento (Candidato):]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="Texto Dinâmico" x="0" y="110" width="555" height="15" uuid="2192e68a-3632-4dae-8cbc-8ffb9e0abf3f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{questionamento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Títulos" positionType="Float" x="0" y="130" width="140" height="15" uuid="4e5ee99b-3834-4e0b-9172-a3d4c2fd36e8">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<printWhenExpression><![CDATA[$F{anexoCandidato} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Anexo (Candidato):]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="Texto Dinâmico" positionType="Float" x="0" y="150" width="555" height="15" uuid="0f36b792-a2b7-4fd5-9236-771728b8119f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<printWhenExpression><![CDATA[$F{anexoCandidato} != null]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{anexoCandidato}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Títulos" positionType="Float" x="0" y="170" width="150" height="15" uuid="e2f25aac-26e7-4fd4-8edb-aa0b033078be">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Recurso (Candidato):]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="Texto Dinâmico" positionType="Float" x="150" y="170" width="405" height="15" uuid="a2341d0a-6ae3-4fd3-b671-261e9522d0c2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{recurso}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="0" y="190" width="555" height="1" uuid="9abbbf95-0c01-431b-bb3b-14f5a8d9128b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement style="Títulos" positionType="Float" x="0" y="196" width="120" height="15" uuid="df511c62-946c-45a4-bf23-c1ea534b6207">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<printWhenExpression><![CDATA[$F{anexoCandidato} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Parecer (Banca):]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="Texto Dinâmico" positionType="Float" x="0" y="216" width="555" height="15" uuid="4b7c3869-2022-4289-bbb5-b80222e1e12c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<printWhenExpression><![CDATA[$F{anexoCandidato} != null]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{parecerBanca}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Títulos" positionType="Float" x="0" y="235" width="120" height="15" uuid="29f2af6f-41ca-4575-9e7e-e0199eedfd02">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Decisão (Banca):]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="Texto Dinâmico" positionType="Float" x="120" y="235" width="435" height="15" uuid="b7ea0d03-ec17-45b4-b2e3-e8e660240a76">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{decisaoBanca}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="0" y="255" width="555" height="1" uuid="0bb2eeb6-ffa3-4f9e-b9a5-041d58a4479b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement style="Títulos" positionType="Float" x="160" y="263" width="100" height="15" uuid="08ddbd4b-0a0d-4aab-b7f4-a4aa3eb4322f">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Publicado em:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="Texto Dinâmico" positionType="Float" x="260" y="263" width="110" height="15" uuid="cc5d2a3e-b72a-46d6-9e37-21c7048cf6ef">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<printWhenExpression><![CDATA[$F{anexoCandidato} != null]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{PAR_DATA}]]></textFieldExpression>
+			</textField>
+			<break>
+				<reportElement x="0" y="285" width="555" height="1" uuid="73262c5e-d3ed-4ef6-ab3d-95ef4d3f060e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</break>
+		</band>
+	</detail>
+</jasperReport>
