@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Gabarito" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a71677d2-f5dd-460e-95e7-5fc289243e87">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
-	<style name="Títulos" hTextAlign="Center" fontName="DejaVu" fontSize="12" isBold="true"/>
+	<style name="Títulos" hAlign="Center" fontName="DejaVu" fontSize="12" isBold="true"/>
 	<style name="Texto Dinâmico" fontName="DejaVu" fontSize="10"/>
 	<style name="Rodapé" fontName="DejaVu" fontSize="10"/>
 	<parameter name="PAR_LOGO" class="java.awt.image.BufferedImage"/>
@@ -32,7 +31,7 @@
 				</reportElement>
 				<text><![CDATA[Resumo de Gabaritos]]></text>
 			</staticText>
-			<textField textAdjust="ScaleFont">
+			<textField>
 				<reportElement style="Títulos" x="0" y="80" width="555" height="15" uuid="e54cdf4a-9611-4bab-ab4c-7f762fea30c2">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -42,10 +41,10 @@
 		</band>
 	</title>
 	<detail>
-		<band height="15" splitType="Stretch">
+		<band height="20" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<textField textAdjust="StretchHeight">
-				<reportElement style="Texto Dinâmico" x="0" y="0" width="555" height="15" uuid="cf0cb493-87ff-4612-b68c-1afb6b9b5424">
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Texto Dinâmico" x="0" y="5" width="555" height="15" uuid="cf0cb493-87ff-4612-b68c-1afb6b9b5424">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
