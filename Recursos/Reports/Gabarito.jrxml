@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Gabarito" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a71677d2-f5dd-460e-95e7-5fc289243e87">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<style name="Títulos" hTextAlign="Center" fontName="DejaVu" fontSize="12" isBold="true"/>
@@ -15,7 +15,7 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="100" splitType="Stretch">
+		<band height="110" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<image>
 				<reportElement x="0" y="0" width="555" height="60" uuid="cb63e64e-89ce-404d-9737-83bf2da14874">
@@ -32,7 +32,7 @@
 				</reportElement>
 				<text><![CDATA[Resumo de Gabaritos]]></text>
 			</staticText>
-			<textField>
+			<textField textAdjust="ScaleFont">
 				<reportElement style="Títulos" x="0" y="80" width="555" height="15" uuid="e54cdf4a-9611-4bab-ab4c-7f762fea30c2">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -77,10 +77,10 @@
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="20" splitType="Stretch">
+		<band height="25" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField>
-				<reportElement style="Texto Dinâmico" positionType="Float" x="0" y="5" width="555" height="15" uuid="58ea4566-9baa-4c2a-b673-7d43708258e8">
+				<reportElement style="Texto Dinâmico" positionType="Float" x="0" y="10" width="555" height="15" uuid="58ea4566-9baa-4c2a-b673-7d43708258e8">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>

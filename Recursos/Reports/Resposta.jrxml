@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Resposta" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="33af20aa-2105-451b-b814-5e4c25dbf612">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<style name="Títulos" hTextAlign="Center" fontName="DejaVu" fontSize="12" isBold="true"/>
@@ -7,7 +7,8 @@
 	<style name="Texto Dinâmico" fontName="DejaVu" fontSize="10"/>
 	<parameter name="PAR_LOGO" class="java.awt.image.BufferedImage"/>
 	<parameter name="PAR_CABECALHO" class="java.lang.String"/>
-	<parameter name="PAR_DATA" class="java.lang.String"/>
+	<parameter name="PAR_DATA_PUBLICACAO" class="java.lang.String"/>
+	<parameter name="PAR_DATA_RETIFICACAO" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -286,10 +287,40 @@
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
-				<textFieldExpression><![CDATA[$P{PAR_DATA}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{PAR_DATA_PUBLICACAO}]]></textFieldExpression>
 			</textField>
 			<break>
 				<reportElement positionType="Float" x="0" y="106" width="555" height="1" uuid="e848a9c8-7c97-463b-930c-bf1ef917cd50">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<printWhenExpression><![CDATA[$P{PAR_DATA_RETIFICACAO} == null]]></printWhenExpression>
+				</reportElement>
+			</break>
+		</band>
+		<band height="17">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<printWhenExpression><![CDATA[$P{PAR_DATA_RETIFICACAO} != null]]></printWhenExpression>
+			<staticText>
+				<reportElement style="Texto Estático" positionType="Float" x="170" y="0" width="85" height="15" uuid="e0f5d0ce-defd-40b4-8031-8bef2ef2085b">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Retificado em:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="Texto Dinâmico" positionType="Float" x="260" y="0" width="110" height="15" uuid="9cb1407f-068e-4626-a34f-8d2ec45385f2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{PAR_DATA_RETIFICACAO}]]></textFieldExpression>
+			</textField>
+			<break>
+				<reportElement positionType="Float" x="0" y="16" width="555" height="1" uuid="2bf62401-5dde-4fed-8edf-6993da9a3cf8">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
