@@ -1,9 +1,9 @@
-<!-- Created with Jaspersoft Studio version 7.0.2.final using JasperReports Library version 7.0.2-31532122640f516c6d17238ae0e41a08113d5ac0  -->
+<!-- Created with Jaspersoft Studio version 7.0.6.final using JasperReports Library version 7.0.6-5d2a603fdc6b3db8f842a83383e594f41891534d  -->
 <jasperReport name="Resposta" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="33af20aa-2105-451b-b814-5e4c25dbf612">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<style name="Títulos" hTextAlign="Center" hImageAlign="Center" fontName="DejaVu" fontSize="12.0" bold="true"/>
 	<style name="Texto Estático" hTextAlign="Center" hImageAlign="Center" fontName="DejaVu" fontSize="10.0" bold="true"/>
-	<style name="Texto Dinâmico" fontName="DejaVu" fontSize="10.0"/>
+	<style name="Texto Dinâmico" hTextAlign="Left" fontName="DejaVu" fontSize="10.0"/>
 	<parameter name="PAR_LOGO" class="java.awt.image.BufferedImage"/>
 	<parameter name="PAR_CABECALHO" class="java.lang.String"/>
 	<parameter name="PAR_DATA_PUBLICACAO" class="java.lang.String"/>
@@ -51,7 +51,7 @@
 				<property name="com.jaspersoft.studio.unit.width" value="px"/>
 			</element>
 			<element kind="textField" uuid="297a2b1f-5d0f-45e8-b410-e32316d45867" x="85" y="0" width="470" height="15" blankWhenNull="true" style="Texto Dinâmico">
-				<expression><![CDATA[String.format("%d. %s [%s]", $F{inscricao}, $F{nomeNormalizado}, $F{CPFOculto})]]></expression>
+				<expression><![CDATA[$F{inscricao} + ". " + $F{nomeNormalizado}  + " [" + $F{CPFOculto} + "]"]]></expression>
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -63,7 +63,7 @@
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<property name="com.jaspersoft.studio.unit.width" value="px"/>
 			</element>
-			<element kind="textField" uuid="ed39172f-0ac3-4d63-98e0-10f7072552d4" x="85" y="20" width="470" height="15" blankWhenNull="true">
+			<element kind="textField" uuid="ed39172f-0ac3-4d63-98e0-10f7072552d4" x="85" y="20" width="470" height="15" blankWhenNull="true" style="Texto Dinâmico">
 				<expression><![CDATA[$F{dataRecursoString}]]></expression>
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -89,7 +89,7 @@
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<property name="com.jaspersoft.studio.unit.width" value="px"/>
 			</element>
-			<element kind="textField" uuid="3d5bdd31-9e7e-4cb8-aa15-91face6006fb" x="60" y="45" width="495" height="15" blankWhenNull="true" style="Texto Dinâmico">
+			<element kind="textField" uuid="3d5bdd31-9e7e-4cb8-aa15-91face6006fb" x="60" y="45" width="495" height="15" textAdjust="ScaleFont" blankWhenNull="true" style="Texto Dinâmico">
 				<expression><![CDATA[$F{objeto} == null ? $F{disciplina} : $F{objeto} + " [" + $F{disciplina} + "]"]]></expression>
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -115,7 +115,7 @@
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<property name="com.jaspersoft.studio.unit.width" value="px"/>
 			</element>
-			<element kind="textField" uuid="2192e68a-3632-4dae-8cbc-8ffb9e0abf3f" x="0" y="110" width="555" height="15" textAdjust="StretchHeight" blankWhenNull="true" hTextAlign="Justified" style="Texto Dinâmico">
+			<element kind="textField" uuid="2192e68a-3632-4dae-8cbc-8ffb9e0abf3f" x="0" y="110" width="555" height="15" textAdjust="StretchHeight" blankWhenNull="true" style="Texto Dinâmico">
 				<expression><![CDATA[$F{questionamento}]]></expression>
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -133,8 +133,9 @@
 				<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				<property name="com.jaspersoft.studio.unit.y" value="px"/>
 			</element>
-			<element kind="textField" uuid="9098ba3c-d5ac-46e3-99f4-93be555d8ce2" positionType="Float" x="0" y="20" width="555" height="15" markup="html" textAdjust="StretchHeight" style="Texto Dinâmico">
-				<expression><![CDATA[String.format("<span style='color: #1E90FF; text-decoration: underline'><a href='%s'>%s</a></span>", $F{anexoCandidato}, $F{anexoCandidato})]]></expression>
+			<element kind="textField" uuid="9098ba3c-d5ac-46e3-99f4-93be555d8ce2" positionType="Float" x="0" y="20" width="555" height="15" forecolor="#1E90FF" markup="none" textAdjust="StretchHeight" linkType="Reference" linkTarget="Self" underline="true" style="Texto Dinâmico">
+				<expression><![CDATA[$F{anexoCandidato}]]></expression>
+				<hyperlinkReferenceExpression><![CDATA[$F{anexoCandidato}]]></hyperlinkReferenceExpression>
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -170,7 +171,7 @@
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<property name="com.jaspersoft.studio.unit.width" value="px"/>
 			</element>
-			<element kind="textField" uuid="2a4090da-6bec-4ed6-9b08-fb76082ea5e2" positionType="Float" x="0" y="45" width="555" height="15" textAdjust="StretchHeight" blankWhenNull="true" hTextAlign="Justified" style="Texto Dinâmico">
+			<element kind="textField" uuid="2a4090da-6bec-4ed6-9b08-fb76082ea5e2" positionType="Float" x="0" y="45" width="555" height="15" textAdjust="StretchHeight" blankWhenNull="true" style="Texto Dinâmico">
 				<expression><![CDATA[$F{parecerBanca}]]></expression>
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -184,7 +185,7 @@
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<property name="com.jaspersoft.studio.unit.width" value="px"/>
 			</element>
-			<element kind="textField" uuid="efaa6777-c6b3-4cc8-82c6-43c9ad64d76f" positionType="Float" x="100" y="65" width="455" height="15" textAdjust="StretchHeight" blankWhenNull="true" bold="true" style="Texto Dinâmico">
+			<element kind="textField" uuid="efaa6777-c6b3-4cc8-82c6-43c9ad64d76f" positionType="Float" x="100" y="65" width="455" height="15" blankWhenNull="true" bold="true" style="Texto Dinâmico">
 				<expression><![CDATA[$F{decisaoBanca}]]></expression>
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -204,7 +205,7 @@
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<property name="com.jaspersoft.studio.unit.width" value="px"/>
 			</element>
-			<element kind="textField" uuid="82b1a1bf-a0c0-4ec4-aeca-585c5a51a9d3" positionType="Float" x="260" y="90" width="110" height="15" textAdjust="StretchHeight" blankWhenNull="true" style="Texto Dinâmico">
+			<element kind="textField" uuid="82b1a1bf-a0c0-4ec4-aeca-585c5a51a9d3" positionType="Float" x="260" y="90" width="110" height="15" blankWhenNull="true" style="Texto Dinâmico">
 				<expression><![CDATA[$P{PAR_DATA_PUBLICACAO}]]></expression>
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -227,7 +228,7 @@
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<property name="com.jaspersoft.studio.unit.width" value="px"/>
 			</element>
-			<element kind="textField" uuid="9cb1407f-068e-4626-a34f-8d2ec45385f2" positionType="Float" x="260" y="0" width="110" height="15" textAdjust="StretchHeight" blankWhenNull="true" style="Texto Dinâmico">
+			<element kind="textField" uuid="9cb1407f-068e-4626-a34f-8d2ec45385f2" positionType="Float" x="260" y="0" width="110" height="15" blankWhenNull="true" style="Texto Dinâmico">
 				<expression><![CDATA[$P{PAR_DATA_RETIFICACAO}]]></expression>
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<property name="com.jaspersoft.studio.unit.y" value="px"/>
